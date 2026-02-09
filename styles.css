@@ -1,0 +1,342 @@
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+:root {
+  /* 🎨 Palette principale */
+  --color-primary: #2F4A73;        /* Helsinki Blue */
+  --color-text: #151619;           /* Oura Black */
+  --color-background: #FFFFFF;     /* Blanc */
+  --color-surface: #E6DED3;         /* Sandstone */
+
+  /* 🎨 Palette secondaire */
+  --color-accent-light: #A2D3E8;    /* Ensō Blue */
+  --color-surface-light: #F6F3EF;   /* Sandstone Light */
+  --color-accent-cta: #FC6558;      /* Living Coral */
+
+  /* ✍️ Typographies */
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+
+  /* 🔠 Tailles de texte */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2rem;
+  --text-xxl: 3rem;
+
+  /* 📐 Espacements */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+
+  /* 🧱 Layout */
+  --container-width: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+}
+/*MON HEADER*/
+.site-header{
+    min-height: 40vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  background-image: url("img/header-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.site-header::before{
+      content: "";
+  position: absolute;
+  inset: 0;
+  
+}
+.header-content{
+    position: relative;
+  max-width: 700px;
+  padding: 32px;
+  color: white;
+}
+
+.btn{
+      display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 32px;
+  border-radius: 999px; /* bouton pilule */
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.cta-secondaire{
+     background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.cta-secondaire:hover{
+      background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.cta-secondaire::after{
+    content: "→";
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.cta-secondaire:hover::after{
+ transform: translateX(4px);   
+}
+
+/*MA SECTION PROBELEMES /SOLUTIONS */
+
+.problem {
+width: 100%;
+background-color: var(--color-surface-light); /* Sandstone Light */
+  
+}
+
+.problem-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  row-gap: 40px;
+  border-bottom: 1px solid rgba(21, 22, 25, 0.1);
+  position: relative;
+}
+
+.problem-container::before{
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 50%;
+  width: 1px;
+  background-color: rgba(21, 22, 25, 0.15); /* Oura Black léger */
+  transform: translateX(-50%);
+}
+.problem-item {
+  display: contents;
+}
+
+.pb {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding-right: 32px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.solution {
+  padding-left: 32px;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+/*MA SECTION BENEFICES */
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px; /* espace entre les colonnes */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center; /* centre le texte */
+  background-color: var(--color-background); /* blanc ou sobre selon ton choix */
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column; /* icône au dessus du texte */
+  align-items: center;    /* centre horizontalement icône et texte */
+  justify-content: flex-start;
+  gap: 16px; /* espace entre icône et texte */
+}
+
+.benefit-item img {
+  width: 64px;  /* taille fixe pro */
+  height: 64px;
+  object-fit: contain;
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.4;
+  max-width: 180px; /* limite la largeur du texte pour garder colonne équilibrée */
+}
+
+@media (max-width: 900px) {
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*mes icones*/
+
+
+.benefit-item div[class^="icon-"] {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: var(--color-background-soft); /* Sandstone Light */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.benefit-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.benefit-item p {
+  transition: color 0.3s ease;
+}
+
+.benefit-item:hover div[class^="icon-"] {
+  background-color: var(--color-accent); /* Ensō Blue */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-item:hover img {
+  transform: scale(1.05);
+}
+
+.benefit-item:hover p {
+  color: var(--color-primary); /* Helsinki Blue */
+}
+
+/* ===== CAROUSEL ===== */
+/* ===== CAROUSEL ===== */
+.carousel {
+  width: 100%;
+  padding: 80px 0;
+  background-color: var(--color-background);
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 100vw;  /* plein écran */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;   /* cache tout débord */
+  padding: 0 24px;    /* petit padding sur les côtés */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 32px;          /* espace entre les images */
+}
+
+.carousel-item {
+  flex: 0 0 calc(100% - 48px); /* largeur = presque toute la page, gap inclus */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 700px;       /* hauteur fixe, tu peux ajuster */
+  object-fit: cover;   /* conserve le ratio et recadre si besoin */
+  display: block;
+}
+
+/* BOUTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(21, 22, 25, 0.6);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-primary);
+}
+
+.carousel-btn.prev {
+  left: 16px;
+}
+
+.carousel-btn.next {
+  right: 16px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 calc(100% - 32px);
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc(100% - 24px);
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    flex: 0 0 100%;
+    height: 250px;
+  }
+}
