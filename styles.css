@@ -20,7 +20,7 @@ body {
 
 :root {
     /* 🎨 Palette principale */
-    --color-primary: #2F4A73;
+    --color-primary: #C0995D;
     /* Helsinki Blue */
     --color-text: #151619;
     /* Oura Black */
@@ -34,7 +34,7 @@ body {
     /* Ensō Blue */
     --color-surface-light: #F6F3EF;
     /* Sandstone Light */
-    --color-accent-cta: #FC6558;
+    --color-accent-cta: #98473E;
     /* Living Coral */
 
     /* ✍️ Typographies */
@@ -794,7 +794,6 @@ body {
 .footer-social img {
     width: 24px;
     height: 24px;
-    filter: brightness(0) invert(1);
 }
 
 /* Copyright */
