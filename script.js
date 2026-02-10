@@ -43,3 +43,11 @@ track.addEventListener('mouseleave', () => {
     updateCarousel();
   }, 5000);
 });
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        item.querySelector('.question').addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
